@@ -28,6 +28,9 @@
 # Enter expected answer:20
 # You were correct! The answer is 20.0
 
+#add input validation to the input numbers
+#input ints output floats
+
 operation = input("Enter operation?")
 nums1 = int(input("Enter first number?"))
 nums2 = int(input("Enter second number?"))
@@ -52,7 +55,8 @@ elif operation == '*':
 elif operation == '/':
     if nums2 == 0:
         print("Invalid input. Please try again.")
-    expected_answer = nums1 / nums2
+    else :
+        expected_answer = nums1 / nums2
     if expected_answer == given_answer:
         print(f"You were correct! The answer is {given_answer}")
     else:
