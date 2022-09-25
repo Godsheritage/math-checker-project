@@ -28,16 +28,16 @@
 # Enter expected answer:20
 # You were correct! The answer is 20.0
 
-#add input validation to the input numbers
-#input ints output floats
+# add input validation to the input numbers
+# input ints output floats
 
-operation = input("Enter operation?")
+operation = input("Enter operation?").lower()
 nums1 = int(input("Enter first number?"))
 nums2 = int(input("Enter second number?"))
 given_answer = int(input("Enter expected answer?"))
 
-
-if operation == '+':
+# ADDITION OPERATION
+if operation == 'add':
     expected_answer = nums1 + nums2
     if expected_answer == given_answer:
         print(f"You were correct! The answer is {given_answer}")
@@ -45,25 +45,31 @@ if operation == '+':
         print(
             f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
         )
-elif operation == '*':
+
+# MULTIPLICATION OPERATION
+elif operation == 'multiply':
     expected_answer = nums1 * nums2
     if expected_answer == given_answer:
         print(f"You were correct! The answer is {given_answer}")
     else:
         print(
             f"your answer is wrong it should {expected_answer} instead of {given_answer}")
-elif operation == '/':
+
+# DIVISION OPERATION
+elif operation == 'divide':
     if nums2 == 0:
         print("Invalid input. Please try again.")
-    else :
-        expected_answer = nums1 / nums2
-    if expected_answer == given_answer:
-        print(f"You were correct! The answer is {given_answer}")
     else:
-        print(
-            f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
-        )
-elif operation == '-':
+        expected_answer = nums1 / nums2
+        if expected_answer == given_answer:
+            print(f"You were correct! The answer is {given_answer}")
+        else:
+            print(
+                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+            )
+
+# SUBTRACTION OPERATION
+elif operation == 'subtract':
     expected_answer = nums1 - nums2
     if expected_answer == given_answer:
         print(f"You were correct! The answer is {given_answer}")
@@ -71,17 +77,22 @@ elif operation == '-':
         print(
             f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
         )
-elif operation == '%':
+
+# REMAINDER OPERATION
+elif operation == 'remainder':
     if nums2 == 0:
         print("Invalid input. Please try again.")
-    expected_answer = nums1 % nums2
-    if expected_answer == given_answer:
-        print(f"You were correct! The answer is {given_answer}")
     else:
-        print(
-            f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
-        )
-elif operation == '**':
+        expected_answer = nums1 % nums2
+        if expected_answer == given_answer:
+            print(f"You were correct! The answer is {given_answer}")
+        else:
+            print(
+                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+            )
+
+# Exponent Operation
+elif operation == 'exponent':
     expected_answer = nums1 ** nums2
     if expected_answer == given_answer:
         print(f"You were correct! The answer is {given_answer}")
