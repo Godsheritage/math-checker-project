@@ -32,35 +32,41 @@
 # input ints output floats
 
 operation = input("Enter operation?").lower()
-nums1 = int(input("Enter first number?"))
-nums2 = int(input("Enter second number?"))
+nums1 = (input("Enter first number?"))
+nums2 = (input("Enter second number?"))
 given_answer = int(input("Enter expected answer?"))
 
 # ADDITION OPERATION
 if operation == 'add':
-    expected_answer = nums1 + nums2
-    if expected_answer == given_answer:
-        print(f"You were correct! The answer is {given_answer}")
+    if nums1.isnumeric() and nums2.isnumeric():
+        expected_answer = int(nums1) + int(nums2)
+        if expected_answer == given_answer:
+            print(f"You were correct! The answer is {given_answer}")
+        else:
+            print(
+                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+            )
     else:
-        print(
-            f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
-        )
+        print("Invalid input. Please try again.")
 
 # MULTIPLICATION OPERATION
 elif operation == 'multiply':
-    expected_answer = nums1 * nums2
-    if expected_answer == given_answer:
-        print(f"You were correct! The answer is {given_answer}")
+    if nums1.isnumeric() and nums2.isnumeric():
+        expected_answer = int(nums1) * int(nums2)
+        if expected_answer == given_answer:
+            print(f"You were correct! The answer is {given_answer}")
+        else:
+            print(
+                f"your answer is wrong it should {expected_answer} instead of {given_answer}")
     else:
-        print(
-            f"your answer is wrong it should {expected_answer} instead of {given_answer}")
+        print("Invalid input. Please try again.")
 
 # DIVISION OPERATION
 elif operation == 'divide':
     if nums2 == 0:
         print("Invalid input. Please try again.")
     else:
-        expected_answer = nums1 / nums2
+        expected_answer = int(nums1) / int(nums2)
         if expected_answer == given_answer:
             print(f"You were correct! The answer is {given_answer}")
         else:
@@ -70,20 +76,24 @@ elif operation == 'divide':
 
 # SUBTRACTION OPERATION
 elif operation == 'subtract':
-    expected_answer = nums1 - nums2
-    if expected_answer == given_answer:
-        print(f"You were correct! The answer is {given_answer}")
+    if nums1.isnumeric() and nums2.isnumeric():
+        expected_answer = int(nums1) - int(nums2)
+        if expected_answer == given_answer:
+            print(f"You were correct! The answer is {given_answer}")
+        else:
+            print(
+                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+            )
     else:
-        print(
-            f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
-        )
+        print("Invalid input. Please try again.")
+
 
 # REMAINDER OPERATION
 elif operation == 'remainder':
     if nums2 == 0:
         print("Invalid input. Please try again.")
     else:
-        expected_answer = nums1 % nums2
+        expected_answer = int(nums1) % int(nums2)
         if expected_answer == given_answer:
             print(f"You were correct! The answer is {given_answer}")
         else:
@@ -91,14 +101,18 @@ elif operation == 'remainder':
                 f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
             )
 
-# Exponent Operation
+# EXPONENT OPERATION
 elif operation == 'exponent':
-    expected_answer = nums1 ** nums2
-    if expected_answer == given_answer:
-        print(f"You were correct! The answer is {given_answer}")
+    if nums1.isnumeric() and nums2.isnumeric():
+        expected_answer = int(nums1) ** int(nums2)
+        if expected_answer == given_answer:
+            print(f"You were correct! The answer is {given_answer}")
+        else:
+            print(
+                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+            )
     else:
-        print(
-            f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
-        )
+        print("Invalid input. Please try again.")
+
 else:
     print("Invalid Operation, please check your input and try again")
