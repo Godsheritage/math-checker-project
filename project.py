@@ -30,21 +30,21 @@
 
 # add input validation to the input numbers
 # input ints output floats
-
-operation = input("Enter operation?").lower()
-nums1 = (input("Enter first number?"))
-nums2 = (input("Enter second number?"))
-given_answer = int(input("Enter expected answer?"))
+#  Not quite. You guessed 2.0 but the actual answer was 1
+operation = input("Enter operation:").lower()
+nums1 = (input("Enter first number:"))
+nums2 = (input("Enter second number:"))
+expected_answer = float(input("Enter expected answer:"))
 
 # ADDITION OPERATION
 if operation == 'add':
     if nums1.isnumeric() and nums2.isnumeric():
-        expected_answer = int(nums1) + int(nums2)
-        if expected_answer == given_answer:
-            print(f"You were correct! The answer is {given_answer}")
+        correct_answer = int(nums1) + int(nums2)
+        if correct_answer == (expected_answer):
+            print(f"You were correct! The answer is {expected_answer}")
         else:
             print(
-                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+                f"not quite. You guessed {expected_answer}  but the actual answer was {correct_answer}"
             )
     else:
         print("Invalid input. Please try again.")
@@ -52,37 +52,37 @@ if operation == 'add':
 # MULTIPLICATION OPERATION
 elif operation == 'multiply':
     if nums1.isnumeric() and nums2.isnumeric():
-        expected_answer = int(nums1) * int(nums2)
-        if expected_answer == given_answer:
-            print(f"You were correct! The answer is {given_answer}")
+        correct_answer = int(nums1) * int(nums2)
+        if correct_answer == expected_answer:
+            print(f"You were correct! The answer is {expected_answer}")
         else:
             print(
-                f"your answer is wrong it should {expected_answer} instead of {given_answer}")
+                f"not quiet. you guessed {expected_answer}  but the actual answer was {correct_answer}")
     else:
         print("Invalid input. Please try again.")
 
 # DIVISION OPERATION
 elif operation == 'divide':
-    if nums2 == 0:
+    if int(nums2) == 0 or not nums2.isnumeric() or not nums1.isnumeric():
         print("Invalid input. Please try again.")
     else:
-        expected_answer = int(nums1) / int(nums2)
-        if expected_answer == given_answer:
-            print(f"You were correct! The answer is {given_answer}")
+        correct_answer = int(nums1) / int(nums2)
+        if correct_answer == expected_answer:
+            print(f"You were correct! The answer is {expected_answer}")
         else:
             print(
-                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+                f"not quite. You guessed {expected_answer}  but the actual answer was {correct_answer}"
             )
 
 # SUBTRACTION OPERATION
 elif operation == 'subtract':
     if nums1.isnumeric() and nums2.isnumeric():
-        expected_answer = int(nums1) - int(nums2)
-        if expected_answer == given_answer:
-            print(f"You were correct! The answer is {given_answer}")
+        correct_answer = int(nums1) - int(nums2)
+        if correct_answer == expected_answer:
+            print(f"You were correct! The answer is {expected_answer}")
         else:
             print(
-                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+                f"not quite. You guessed {expected_answer}  but the actual answer was {correct_answer}"
             )
     else:
         print("Invalid input. Please try again.")
@@ -90,29 +90,33 @@ elif operation == 'subtract':
 
 # REMAINDER OPERATION
 elif operation == 'remainder':
-    if nums2 == 0:
+    if int(nums2) == 0 or not nums2.isnumeric() or not nums1.isnumeric():
         print("Invalid input. Please try again.")
     else:
-        expected_answer = int(nums1) % int(nums2)
-        if expected_answer == given_answer:
-            print(f"You were correct! The answer is {given_answer}")
+        correct_answer = int(nums1) % int(nums2)
+        if correct_answer == expected_answer:
+            print(f"You were correct! The answer is {expected_answer}")
         else:
             print(
-                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+                f"not quite. You guessed {expected_answer}  but the actual answer was {correct_answer}"
             )
 
 # EXPONENT OPERATION
 elif operation == 'exponent':
     if nums1.isnumeric() and nums2.isnumeric():
-        expected_answer = int(nums1) ** int(nums2)
-        if expected_answer == given_answer:
-            print(f"You were correct! The answer is {given_answer}")
+        correct_answer = int(nums1) ** int(nums2)
+        if correct_answer == expected_answer:
+            print(f"You were correct! The answer is {expected_answer}")
         else:
             print(
-                f"your answer is wrong it should be {expected_answer} instead of {given_answer}"
+                f"not quite. You guessed {expected_answer}  but the actual answer was {correct_answer}"
             )
     else:
         print("Invalid input. Please try again.")
 
+# IF OPERATION IS NOT DEFINED
 else:
     print("Invalid Operation, please check your input and try again")
+
+
+# SHOULD I MAKE A TYPE CHECK FOR THE EXPECTED ANSWER TO MAKE SURE IT IS ALSO A FLOAT?
